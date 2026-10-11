@@ -1,0 +1,696 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a1830">
+<meta name="description" content="الموقع التعريفي لمحمد سهري السيد محمد، رئيس مجلس اتحاد طلاب مدرسة الشهيد العقيد أركان حرب عاصم محمد عصام الثانوية العسكرية بنين.">
+<title>محمد سهري | القيادة الطلابية</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --navy: #0a1830;
+  --navy2: #102849;
+  --gold: #d9b66d;
+  --white: #ffffff;
+  --muted: #b8c4d6;
+  --bg: #f4f6fa;
+  --text: #182840;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 85px; }
+
+body {
+  font-family: 'Cairo', Tahoma, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.9;
+}
+
+a { color: inherit; text-decoration: none; }
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10,24,48,.97);
+  border-bottom: 1px solid rgba(217,182,109,.35);
+  padding: 12px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #edf1f7;
+  font-size: 13px;
+  transition: color .2s;
+}
+
+.nav-links a:hover { color: var(--gold); }
+
+.hero {
+  min-height: 650px;
+  padding: 100px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background:
+    radial-gradient(ellipse at 50% 20%, #23436b 0%, transparent 55%),
+    linear-gradient(135deg, #071326, #102849 60%, #0a1830);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before, .hero::after {
+  content: "";
+  position: absolute;
+  border: 1px solid rgba(217,182,109,.16);
+  border-radius: 50%;
+  width: 450px;
+  height: 450px;
+  pointer-events: none;
+}
+
+.hero::before { top: -260px; right: -100px; }
+.hero::after { bottom: -330px; left: -80px; width: 550px; height: 550px; }
+
+.hero-content { max-width: 900px; position: relative; z-index: 1; }
+
+.eyebrow {
+  display: inline-block;
+  border: 1px solid rgba(217,182,109,.65);
+  border-radius: 50px;
+  padding: 5px 20px;
+  color: var(--gold);
+  font-size: 14px;
+  margin-bottom: 24px;
+}
+
+.hero h1 {
+  font-size: clamp(34px, 6vw, 64px);
+  font-weight: 900;
+  line-height: 1.45;
+  margin-bottom: 15px;
+}
+
+.hero h1 span { color: var(--gold); }
+
+.hero p {
+  color: #d6dfeb;
+  font-size: clamp(14px, 2vw, 18px);
+  max-width: 760px;
+  margin: 0 auto 28px;
+}
+
+.school {
+  font-size: 14px !important;
+  color: #f3e7ca !important;
+}
+
+.btn {
+  display: inline-block;
+  padding: 11px 26px;
+  border-radius: 8px;
+  font-weight: 800;
+  margin: 5px;
+  transition: transform .2s, background .2s;
+}
+
+.btn:hover { transform: translateY(-3px); }
+
+.btn-gold { background: var(--gold); color: var(--navy); }
+.btn-outline { border: 1px solid #d7dfeb; color: white; }
+
+section { padding: 80px 7%; }
+
+.section-head {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-head small {
+  color: #a17b2e;
+  font-weight: 800;
+  letter-spacing: .5px;
+}
+
+.section-head h2 {
+  font-size: clamp(25px, 4vw, 36px);
+  color: var(--navy);
+  margin: 5px 0 10px;
+}
+
+.section-head p {
+  color: #657287;
+  max-width: 750px;
+  margin: auto;
+  font-size: 15px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 25px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.panel {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  border: 1px solid #e5eaf1;
+  box-shadow: 0 8px 30px rgba(10,24,48,.04);
+}
+
+.panel h3 { color: var(--navy); margin-bottom: 12px; }
+.panel p { color: #5e6b7f; font-size: 15px; }
+
+.quote {
+  background: var(--navy);
+  color: white;
+  border-right: 4px solid var(--gold);
+}
+
+.quote h3 { color: var(--gold); }
+.quote p { color: #e1e8f2; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e6eaf0;
+  padding: 25px;
+  border-radius: 14px;
+  transition: transform .2s, box-shadow .2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(10,24,48,.09);
+}
+
+.number {
+  color: #b58b39;
+  font-size: 28px;
+  font-weight: 900;
+}
+
+.card h3 { font-size: 17px; color: var(--navy); margin: 5px 0 10px; }
+.card p, .card li { color: #627086; font-size: 14px; }
+.card ul { padding-right: 19px; }
+
+.dark-section {
+  background: linear-gradient(135deg, #09162b, #112c4d);
+  color: white;
+}
+
+.dark-section .section-head h2 { color: white; }
+.dark-section .section-head p { color: #c3cfdf; }
+
+.dark-section .card {
+  background: rgba(255,255,255,.055);
+  border-color: rgba(255,255,255,.12);
+}
+
+.dark-section .card h3 { color: var(--gold); }
+.dark-section .card p, .dark-section .card li { color: #d2dbea; }
+
+.principles {
+  max-width: 950px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 15px;
+}
+
+.principle {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  border: 1px solid #e5eaf1;
+}
+
+.check {
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: #f7edda;
+  color: #8b6723;
+  border-radius: 9px;
+  font-weight: 900;
+}
+
+.principle h3 { font-size: 15px; margin-bottom: 4px; color: var(--navy); }
+.principle p { font-size: 13px; color: #68758a; }
+
+.ideas {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.idea {
+  background: white;
+  border: 1px solid #e5eaf1;
+  border-radius: 12px;
+  padding: 22px;
+  margin-bottom: 14px;
+}
+
+.idea h3 { color: var(--navy); font-size: 17px; margin-bottom: 5px; }
+.idea p { color: #657287; font-size: 14px; }
+
+.roadmap {
+  max-width: 850px;
+  margin: auto;
+}
+
+.step {
+  padding: 18px 25px;
+  border-right: 3px solid var(--gold);
+  margin-bottom: 18px;
+  background: rgba(255,255,255,.06);
+  border-radius: 0 12px 12px 0;
+}
+
+.step h3 { color: var(--gold); font-size: 17px; margin-bottom: 5px; }
+.step p { color: #d4deea; font-size: 14px; }
+
+.sources {
+  max-width: 900px;
+  margin: auto;
+  background: white;
+  border: 1px solid #e5eaf1;
+  padding: 25px;
+  border-radius: 14px;
+}
+
+.sources h3 { color: var(--navy); margin-bottom: 10px; }
+.sources p { font-size: 14px; color: #657287; margin-bottom: 12px; }
+.sources a { color: #8a6420; text-decoration: underline; font-weight: 700; }
+
+footer {
+  text-align: center;
+  padding: 35px 7%;
+  color: #c9d4e3;
+  background: #071326;
+  font-size: 13px;
+}
+
+footer strong { color: var(--gold); }
+
+@media (max-width: 800px) {
+  nav { align-items: flex-start; flex-direction: column; gap: 8px; }
+  .nav-links { gap: 8px 16px; }
+  .about-grid { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .hero { min-height: 560px; padding: 75px 6%; }
+}
+
+@media (max-width: 520px) {
+  section { padding: 60px 5%; }
+  .cards, .principles { grid-template-columns: 1fr; }
+  .panel { padding: 23px; }
+  .nav-links a { font-size: 12px; }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <a class="logo" href="#home">محمد سهري <span>✦</span></a>
+  <div class="nav-links">
+    <a href="#about">من أنا</a>
+    <a href="#goals">الأهداف</a>
+    <a href="#principles">المبادئ</a>
+    <a href="#secretary">أمين الاتحاد</a>
+    <a href="#committee">اللجنة الدينية والثقافية</a>
+    <a href="#vision">رؤيتي</a>
+  </div>
+</nav>
+
+<header class="hero" id="home">
+  <div class="hero-content">
+    <span class="eyebrow">قيادة طلابية • وعي • مسؤولية</span>
+    <h1>محمد سهري<br><span>السيد محمد</span></h1>
+    <p>
+      رئيس مجلس اتحاد طلاب مدرسة الشهيد العقيد أركان حرب
+      عاصم محمد عصام الثانوية العسكرية بنين
+    </p>
+    <p class="school">
+      لقاء التعارف — مجلس اتحاد طلاب إدارة الهرم
+    </p>
+    <a class="btn btn-gold" href="#about">تعرّف عليّ</a>
+    <a class="btn btn-outline" href="#vision">اكتشف رؤيتي</a>
+  </div>
+</header>
+
+<section id="about">
+  <div class="section-head">
+    <small>نبذة تعريفية</small>
+    <h2>من أنا؟</h2>
+    <p>القيادة ليست منصبًا فقط، بل مسؤولية وعمل مستمر من أجل الآخرين.</p>
+  </div>
+
+  <div class="about-grid">
+    <article class="panel">
+      <h3>محمد سهري السيد محمد</h3>
+      <p>
+        طالب أؤمن بأن اتحاد الطلاب مساحة حقيقية للتعبير عن آراء الطلاب،
+        وتنمية مهاراتهم، وتحويل الأفكار الإيجابية إلى أنشطة ومبادرات
+        تخدم المجتمع المدرسي.
+      </p>
+      <p style="margin-top:12px">
+        أطمح إلى المشاركة الفعالة في العمل الطلابي، وبناء جسور التواصل
+        بين الطلاب، وتقديم نموذج قيادي يجمع بين الانضباط والتعاون
+        واحترام الرأي الآخر.
+      </p>
+    </article>
+
+    <article class="panel quote">
+      <h3>رسالتي</h3>
+      <p>
+        أن يكون صوت الطالب مسموعًا، وأن تتحول الأفكار إلى خطوات عملية،
+        وأن يصبح العمل الجماعي وسيلة لصناعة بيئة مدرسية أكثر وعيًا
+        وتعاونًا وإبداعًا.
+      </p>
+      <p style="margin-top:18px;color:#d9b66d;font-weight:800">
+        معًا نحو اتحاد طلابي فعّال ومؤثر.
+      </p>
+    </article>
+  </div>
+</section>
+
+<section id="goals">
+  <div class="section-head">
+    <small>وفق الإطار التربوي للاتحادات الطلابية</small>
+    <h2>أهداف الاتحاد الطلابي</h2>
+    <p>
+      عرض موجز لأبرز أهداف الاتحادات الطلابية الواردة في المادة الثالثة
+      من القرار الوزاري رقم 62 لسنة 2013.
+    </p>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <div class="number">01</div>
+      <h3>التفوق والإبداع</h3>
+      <p>تشجيع التفوق الدراسي، وتنمية المبادرة والإبداع والابتكار لدى الطلاب.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">02</div>
+      <h3>المشاركة الطلابية</h3>
+      <p>إتاحة الفرصة للتعبير عن أفكار الطلاب ومقترحاتهم بصورة مسؤولة.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">03</div>
+      <h3>بناء الشخصية</h3>
+      <p>الإسهام في إعداد شخصية مصرية قادرة على مواجهة تحديات المستقبل.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">04</div>
+      <h3>روح الأسرة المدرسية</h3>
+      <p>تعزيز التعاون بين الطلاب والمعلمين والإدارة في إطار الاحترام والانضباط.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">05</div>
+      <h3>الحوار واحترام الآخر</h3>
+      <p>ترسيخ ثقافة الحوار واحترام الرأي والرأي الآخر والموضوعية في النقاش.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">06</div>
+      <h3>الثقافة والتكنولوجيا</h3>
+      <p>تنمية الثقافة الذاتية والعامة وتوظيف التكنولوجيا لخدمة المجتمع والتقدم.</p>
+    </article>
+  </div>
+</section>
+
+<section id="principles" style="background:#eaf0f7">
+  <div class="section-head">
+    <small>قيم العمل الطلابي</small>
+    <h2>مبادئ الاتحاد الطلابي</h2>
+    <p>
+      خلاصة مبسطة للمبادئ الواردة في المادة الثانية من القرار الوزاري،
+      مع الحفاظ على معناها التربوي.
+    </p>
+  </div>
+
+  <div class="principles">
+    <article class="principle">
+      <span class="check">✓</span>
+      <div>
+        <h3>القيم الدينية والسلوك القويم</h3>
+        <p>ترجمة الإيمان والقيم الروحية إلى سلوك يومي إيجابي ومسؤول.</p>
+      </div>
+    </article>
+
+    <article class="principle">
+      <span class="check">✓</span>
+      <div>
+        <h3>حرية التعبير</h3>
+        <p>إتاحة الفرصة للطلاب للمشاركة في القرارات المتعلقة بحياتهم التعليمية.</p>
+      </div>
+    </article>
+
+    <article class="principle">
+      <span class="check">✓</span>
+      <div>
+        <h3>الديمقراطية والعدالة</h3>
+        <p>تعزيز المساواة والحرية والكرامة والعدالة الاجتماعية بالوسائل التربوية.</p>
+      </div>
+    </article>
+
+    <article class="principle">
+      <span class="check">✓</span>
+      <div>
+        <h3>الوحدة الوطنية</h3>
+        <p>ترسيخ الوحدة الوطنية والانتماء للأسرة والمدرسة والمجتمع واحترام المقدسات والممتلكات العامة.</p>
+      </div>
+    </article>
+
+    <article class="principle">
+      <span class="check">✓</span>
+      <div>
+        <h3>المواطنة والانتماء</h3>
+        <p>تأكيد المسؤولية الوطنية والحفاظ على السلام الاجتماعي.</p>
+      </div>
+    </article>
+
+    <article class="principle">
+      <span class="check">✓</span>
+      <div>
+        <h3>القدوة والحقوق والواجبات</h3>
+        <p>تشجيع القدوة الطيبة واحترام حقوق الإنسان والإيمان بأن كل حق يقابله واجب.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id="secretary">
+  <div class="section-head">
+    <small>القيادة والتنظيم</small>
+    <h2>دور أمين الاتحاد</h2>
+    <p>
+      توضح المادة 50 من القرار الوزاري مسؤوليات أمين المجلس الطلابي،
+      تحت إشراف الرائد العام.
+    </p>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <div class="number">01</div>
+      <h3>إدارة الاجتماعات</h3>
+      <p>رئاسة الاجتماعات وإدارتها بروح تعاونية وأسلوب ديمقراطي سليم.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">02</div>
+      <h3>تنظيم جدول الأعمال</h3>
+      <p>إعداد جدول الاجتماعات بالتعاون مع الأمين المساعد ومقرري اللجان.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">03</div>
+      <h3>توثيق العمل</h3>
+      <p>التوقيع على محاضر الاجتماعات والخطابات والدعوات الخاصة بالاتحاد.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">04</div>
+      <h3>تمثيل الاتحاد</h3>
+      <p>تمثيل التشكيل الطلابي لدى الجهات التي يُكلّف بتمثيله لديها.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">05</div>
+      <h3>متابعة التنفيذ</h3>
+      <p>متابعة تنفيذ قرارات الاجتماعات وتوصياتها بالتعاون مع أعضاء الاتحاد.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">06</div>
+      <h3>العمل الجماعي</h3>
+      <p>التعاون مع الأمين المساعد ومقرري اللجان والرائد العام لضمان حسن سير العمل.</p>
+    </article>
+  </div>
+</section>
+
+<section id="committee" class="dark-section">
+  <div class="section-head">
+    <small>وعي وقيم وثقافة</small>
+    <h2>اللجنة الدينية والثقافية</h2>
+    <p>
+      النشاط الديني والثقافي من لجان النشاط الخمس في تشكيل الاتحاد.
+      والأفكار التالية مقترحات عملية مستلهمة من أهداف الاتحاد وبرامجه التربوية،
+      وليست اقتباسًا حرفيًا لاختصاصات مادة مستقلة.
+    </p>
+  </div>
+
+  <div class="cards">
+    <article class="card">
+      <div class="number">01</div>
+      <h3>القيم والأخلاق</h3>
+      <p>تنظيم لقاءات توعوية حول الأمانة والصدق واحترام الآخرين وتحمل المسؤولية.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">02</div>
+      <h3>المسابقات الدينية</h3>
+      <p>إعداد مسابقات مناسبة في المعلومات الدينية والسيرة والقيم والأخلاق.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">03</div>
+      <h3>القراءة والثقافة</h3>
+      <p>تشجيع القراءة وتبادل الكتب وتنظيم مسابقات التلخيص والمعلومات العامة.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">04</div>
+      <h3>الوعي الوطني</h3>
+      <p>التعريف بالمناسبات الوطنية والشخصيات التاريخية ودعم قيم المواطنة.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">05</div>
+      <h3>الحوار الواعي</h3>
+      <p>تنظيم ندوات طلابية لتبادل الأفكار وتعلم الاستماع واحترام الاختلاف.</p>
+    </article>
+
+    <article class="card">
+      <div class="number">06</div>
+      <h3>الثقافة الرقمية</h3>
+      <p>التوعية بالتحقق من المعلومات وآداب الحوار والمسؤولية في استخدام التكنولوجيا.</p>
+    </article>
+  </div>
+</section>
+
+<section id="vision">
+  <div class="section-head">
+    <small>رؤية مقترحة للمرحلة القادمة</small>
+    <h2>رؤيتي للعمل الطلابي</h2>
+    <p>أفكار قابلة للتطوير بالتعاون مع مجلس الاتحاد والطلاب والمشرفين المختصين.</p>
+  </div>
+
+  <div class="roadmap">
+    <article class="step">
+      <h3>أولًا: الاستماع إلى الطلاب</h3>
+      <p>جمع المقترحات والملاحظات بطريقة منظمة، وتصنيفها حسب الأولوية وإمكانات التنفيذ.</p>
+    </article>
+
+    <article class="step">
+      <h3>ثانيًا: تحويل الأفكار إلى خطط</h3>
+      <p>تحديد هدف كل مبادرة، والأنشطة المطلوبة، والمسؤوليات، والجدول الزمني ومؤشرات النجاح.</p>
+    </article>
+
+    <article class="step">
+      <h3>ثالثًا: تنشيط اللجنة الدينية والثقافية</h3>
+      <p>إعداد برنامج متنوع يجمع بين التوعية الدينية والثقافة العامة والمسابقات والحوار.</p>
+    </article>
+
+    <article class="step">
+      <h3>رابعًا: التعاون بين اللجان</h3>
+      <p>تنفيذ مبادرات مشتركة تربط الثقافة بالعلم والخدمة المجتمعية والأنشطة الطلابية الأخرى.</p>
+    </article>
+
+    <article class="step">
+      <h3>خامسًا: التقييم والتطوير</h3>
+      <p>توثيق الأنشطة وقياس المشاركة والاستفادة من آراء الطلاب لتحسين البرامج التالية.</p>
+    </article>
+  </div>
+</section>
+
+<section id="references" style="background:#eaf0f7">
+  <div class="section-head">
+    <small>المرجعية التنظيمية</small>
+    <h2>المصدر والتوثيق</h2>
+  </div>
+
+  <div class="sources">
+    <h3>القرار الوزاري رقم 62 لسنة 2013</h3>
+    <p>
+      القرار بشأن الاتحادات الطلابية والريادة بالمدارس، الصادر بتاريخ
+      27 فبراير 2013. استُخدمت المادة الثانية للمبادئ، والمادة الثالثة للأهداف،
+      والمادة 50 لاختصاصات أمين المجلس الطلابي.
+    </p>
+    <p>
+      <a href="https://ar.wikisource.org/wiki/قرار_وزاري_رقم_62_لسنة_2013_بشأن_الاتحادات_الطلابية_والريادة_بالمدارس_(مصر)"
+         target="_blank" rel="noopener noreferrer">
+        الاطلاع على نص القرار
+      </a>
+    </p>
+    <p>
+      تنبيه: هذا الموقع عرض تعريفي مبسط، وليس بديلًا عن النص الكامل للقرار
+      أو أي تعديلات أو تعليمات تنظيمية لاحقة.
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p><strong>محمد سهري السيد محمد</strong></p>
+  <p>رئيس مجلس اتحاد طلاب مدرسة الشهيد العقيد أركان حرب عاصم محمد عصام الثانوية العسكرية بنين</p>
+  <p style="margin-top:12px">لقاء التعارف — اتحاد طلاب إدارة الهرم</p>
+  <p style="margin-top:8px;color:#8494aa">القيادة مسؤولية، والحوار طريق، والعمل الجماعي أساس النجاح.</p>
+</footer>
+
+</body>
+  </html>
